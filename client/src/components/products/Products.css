@@ -1,0 +1,25 @@
+div .product-container-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+@media (min-width: 540px) {
+  div .product-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  div .product-container-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  div .product-container-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

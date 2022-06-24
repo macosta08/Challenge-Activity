@@ -1,0 +1,93 @@
+nav {
+  background: #ffe600;
+  width: 100%;
+  padding: 10px 0px;
+  display: inline-flex;
+  justify-content: center;
+  box-sizing: border-box; /* para ajustarse al tamaño de la pantalla  */
+}
+
+nav .nav-container {
+  background: none;
+  display: inline-flex;
+  width: 90%;
+}
+
+nav .nav-container div.logo {
+  background-image: url('https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.3/mercadolibre/logo__small.png');
+  background-repeat: no-repeat;
+  background-color: #ffe600;
+  background-position: center; /* Center the image */
+  height: 40px;
+  width: 60px;
+}
+
+nav .search-box {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+nav .search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+  padding: 0 10px;
+  font-size: 16px;
+  background: #fff;
+}
+
+nav .search-box button {
+  height: 100%;
+  width: 40px;
+  border: none;
+  background: #eeeeee;
+  border-radius: 0 4px 4px 0;
+  outline: none;
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: black !important;
+}
+
+@media (min-width: 640px) {
+  nav .nav-container {
+    width: 85%;
+  }
+}
+
+@media (min-width: 768px) {
+  nav .nav-container {
+    width: 83%;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav .nav-container {
+    width: 80%;
+  }
+  nav .search-box input {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1280px) {
+  nav .nav-container {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1536px) {
+  nav .nav-container {
+    width: 70%;
+  }
+}
