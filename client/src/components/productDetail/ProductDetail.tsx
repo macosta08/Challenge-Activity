@@ -32,7 +32,8 @@ interface ProductType {
 
 const ProductDetail = () => {
   let { id } = useParams();
-  const endpoint = `${process.env.URL_ENDPOINT}/api/items/${id}`;
+  const port = 'https://meli-macosta08.herokuapp.com';
+  const endpoint = `${port}/api/items/${id}`;
   const [isLoadingState, setIsLoadingState] = useState(false);
 
   const [product, setProduct] = useState<ProductType>({
