@@ -16,9 +16,9 @@ import './SearchResult.css';
 const SearchResult = () => {
   const location = useLocation();
   const searchProduct = location.search.replace('?search=', '');
-  const port = 'https://meli-macosta08.herokuapp.com';
-  const endpoint = `${port}/api/items?q=${searchProduct}`;
-  console.log('process.env.URL_ENDPOINT :>> ', port);
+  const baseURL = process.env.REACT_APP_URL_ENDPOINT || 'http://localhost:8080';
+  const endpoint = `${baseURL}/api/items?q=${searchProduct}`;
+  console.log('process.env.URL_ENDPOINT :>> ', baseURL);
   const [isLoadingState, setIsLoadingState] = useState(false);
   const [dataState, setDataState] = useState({
     author: {},
