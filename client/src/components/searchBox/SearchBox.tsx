@@ -6,7 +6,7 @@ import './SearchBox.css';
 const SearchBox = () => {
   const location = useLocation();
   const history = useNavigate();
-  const query = location.search.replace('?search=', '').replaceAll('%20', ' ');
+  const query = location.search.replace('?search=', '').replace(/%20/g, ' ');
   const [stateSearch, setStateSearch] = useState(query);
   const handleInputChange = (e: { target: { value: React.SetStateAction<string> } }) => {
     setStateSearch(e.target.value);
