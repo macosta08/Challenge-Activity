@@ -2,76 +2,19 @@
 cada vez que cambie la URL y rederizar el Breadcrumb y el 
 contenerdor del detalle del producto */
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useFetchDetail } from '../../hooks/useFetchDetail';
 import { Breadcrumb } from '../breadcrumb/Breadcrumb';
 import { ContainerDetail } from '../containerDetail/ContainerDetail';
 import { Spinner } from '../spinner/Spinner';
 import './ProductDetail.css';
 
-interface ItemType {
-  id: string;
-  title: string;
-  price: {
-    currency: string;
-    amount: number;
-    decimals: number;
-  };
-  picture: string;
-  condition: string;
-  free_shipping: boolean;
-  sold_quantity: number;
-  description: string;
-}
-
-interface ProductType {
-  author: { name: string; lastname: string };
-  categories: string[];
-  item: ItemType;
-}
-
 const ProductDetail = () => {
   let { id } = useParams();
   const baseURL = process.env.REACT_APP_URL_ENDPOINT || 'http://localhost:8080';
   const endpoint = `${baseURL}/api/items/${id}`;
-  const [isLoadingState, setIsLoadingState] = useState(false);
-
-  const [product, setProduct] = useState<ProductType>({
-    author: { name: '', lastname: '' },
-    categories: [],
-    item: {
-      id: '',
-      title: '',
-      price: {
-        currency: '',
-        amount: 0,
-        decimals: 0,
-      },
-      picture: '',
-      condition: '',
-      free_shipping: false,
-      sold_quantity: 0,
-      description: '',
-    },
-  });
-  const { item, categories } = product;
-
-  const getProduct = async (endpoints: string) => {
-    setIsLoadingState(true);
-    await fetch(endpoints)
-      .then((response) => response.json())
-      .then((data) => {
-        setProduct(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    setIsLoadingState(false);
-  };
-
-  useEffect(() => {
-    getProduct(endpoint);
-  }, [endpoint]);
+  const { categories, item, isLoading } = useFetchDetail(endpoint);
 
   return (
     <>
@@ -79,7 +22,7 @@ const ProductDetail = () => {
         <Breadcrumb categories={categories} />
         <ContainerDetail product={item} />
       </main>
-      <Spinner isLoading={isLoadingState} />
+      <Spinner isLoading={isLoading} />
     </>
   );
 };

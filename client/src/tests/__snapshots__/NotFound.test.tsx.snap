@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prueba en <NotFound /> Debe hacer match con el snapshot 1`] = `
+<div>
+  <main>
+    <div
+      class="product-container-notFound"
+    >
+      <i
+        class="fas fa-search-minus search-icon-notFound"
+      />
+      <div
+        class="text-container-notFound"
+      >
+        <p
+          data-testid="paragraph"
+        >
+          No hay publicaciones que coincidan con tu búsqueda.
+        </p>
+        <ul>
+          <li>
+            Revisa la ortografía de la palabra.
+          </li>
+          <li>
+            Utiliza palabras más genéricas o menos palabras.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
+`;

@@ -14,6 +14,7 @@ const SearchBox = () => {
 
   const handleSearch = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    if (stateSearch.trim().length <= 1) return;
     history(`/items?search=${stateSearch}`);
   };
 
@@ -34,7 +35,7 @@ const SearchBox = () => {
             onChange={handleInputChange}
             onKeyPress={(event) => event.key === 'Enter' && handleSearch(event)}
           />
-          <button type='button' onClick={handleSearch}>
+          <button type='button' aria-label='btn-search' onClick={handleSearch}>
             <i className='fa fa-search' />
           </button>
         </div>

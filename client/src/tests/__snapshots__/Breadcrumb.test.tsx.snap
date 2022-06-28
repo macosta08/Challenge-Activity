@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prueba en <Breadcrumb /> Prueba Snapshot 1`] = `
+<div>
+  <div
+    class="breadcrumb"
+  >
+    <span>
+      Hogar
+      <i
+        class="fas fa-chevron-right icon-rigth"
+      />
+    </span>
+    <span>
+      Textiles
+      <i
+        class="fas fa-chevron-right icon-rigth"
+      />
+    </span>
+    <span>
+      <b>
+        Ropa
+      </b>
+    </span>
+  </div>
+</div>
+`;
