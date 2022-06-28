@@ -44,6 +44,7 @@ export const useFetchDetail = (url: string) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const getDataItems = async () => {
+    setIsLoading(true);
     const newProducts = await fetch(url)
       .then((response) => response.json())
       .then((data) => data)
